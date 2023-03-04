@@ -1,0 +1,132 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" id="win8">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>FakeBSOD.com - Windows 8 Blue Screen of Death</title>
+  <style>
+    @charset "utf-8";
+    /* CSS Document */
+
+    /****** Generic *******/
+    html#home body,
+    html#error404 body {
+      background: #0000aa;
+      color: #ffffff;
+      font-family: courier;
+      font-size: 12pt;
+      text-align: center;
+      margin: 100px;
+    }
+
+    html#generic {
+      -webkit-user-select: none;
+      /* Safari 3.1+ */
+      -moz-user-select: none;
+      /* Firefox 2+ */
+      -ms-user-select: none;
+      /* IE 10+ */
+      user-select: none;
+      /* Standard syntax */
+      cursor: none;
+      /* invisible cursor */
+    }
+
+    html#generic body {
+      background: #0000aa;
+      color: #ffffff;
+      font-family: courier;
+      font-size: 12pt;
+      text-align: center;
+      margin: 100px;
+    }
+
+    blink {
+      color: yellow;
+    }
+
+    .neg {
+      background: #fff;
+      color: #0000aa;
+      font-weight: bold;
+    }
+
+    span.neg {
+      padding: 2px 8px;
+    }
+
+    p {
+      margin: 30px 100px;
+      text-align: left;
+    }
+
+    p.center {
+      text-align: center;
+    }
+
+    a,
+    a:hover {
+      color: inherit;
+      font: inherit;
+      text-decoration: none;
+    }
+
+    /****** Windows 8 *******/
+    html#win8 body {
+      background: #55caff;
+      color: #ffffff;
+      font-family: Segoe UI;
+      font-size: 12pt;
+      text-align: center;
+      margin: 100px 15% 100px 15%;
+    }
+
+    html#win8 {
+      -webkit-user-select: none;
+      /* Safari 3.1+ */
+      -moz-user-select: none;
+      /* Firefox 2+ */
+      -ms-user-select: none;
+      /* IE 10+ */
+      user-select: none;
+      /* Standard syntax */
+      cursor: none;
+      /* invisible cursor */
+    }
+
+    #sadface {
+      display: block;
+      width: 100%;
+      height: 219px;
+      margin: 30px 100px;
+      background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJAAAADbCAYAAACC2RgXAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDowNEY2N0NFQUUwRUNFNDExOUE0NkRERjdFMkY5NjlGNSIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDo0NDBFNDgxMUVDRTExMUU0ODJBQ0JGQUZCQzg2MjNGRCIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDo0NDBFNDgxMEVDRTExMUU0ODJBQ0JGQUZCQzg2MjNGRCIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M2IChXaW5kb3dzKSI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjA1RjY3Q0VBRTBFQ0U0MTE5QTQ2RERGN0UyRjk2OUY1IiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjA0RjY3Q0VBRTBFQ0U0MTE5QTQ2RERGN0UyRjk2OUY1Ii8+IDwvcmRmOkRlc2NyaXB0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');
+      background-repeat: no-repeat;
+    }
+
+    p#win8topblock {
+      font-size: 35px;
+      margin-bottom: 0px;
+    }
+
+    p#win8errorblock {
+      margin-top: 15px;
+    }
+  </style>
+  <script type="text/javascript">
+    document.addEventListener('contextmenu', event => event.preventDefault()); //disable right-click!
+  </script>
+
+
+</head>
+
+<body>
+  <div id="sadface"></div>
+  <p id="win8topblock">
+    Your PC ran into a problem that it couldn't handle,
+    and now it needs to restart We're just collecting some error info, and then we'll restart for you.</p>
+  <p id="win8errorblock">If you'd like to know more, you can search online later for this error: DPC_WATCHDOG_VIOLATION
+  </p>
+</body>
+
+</html>
