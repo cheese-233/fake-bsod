@@ -116,19 +116,12 @@
   <script type="text/javascript">
     document.addEventListener('contextmenu', event => event.preventDefault()); //disable right-click!
     document.oncontextmenu = function () { 
-		  return false; 
-	  };
-	  document.onkeydown = function () {
-      if (window.event && window.event.keyCode == 123) {
-          event.keyCode = 0;
-          event.returnValue = false;
-          return false;
-      }
-      if (window.event && window.event.keyCode == 122) {
-          event.keyCode = 0;
-          event.returnValue = false;
-          return false;
-      }
+        return false; 
+    };
+    document.onkeydown = function () {
+    	event.keyCode = 0;
+        event.returnValue = false;
+        return false;
     }
   </script>
 
@@ -144,19 +137,21 @@
   </p>
 </body>
   <script type="text/javascript" async>
-      function requestFullScreen(element) {
-        var requestMethod = element.requestFullScreen || element.webkitRequestFullScreen || element.mozRequestFullScreen || element.msRequestFullScreen;
-        if (requestMethod) {
-            requestMethod.call(element);
-        } else if (typeof window.ActiveXObject !== "undefined") {
-            var wscript = new ActiveXObject("WScript.Shell");
-            if (wscript !== null) {
-                wscript.SendKeys("{F11}");
-            }
-        }
-    }
-    requestFullScreen(document.firstElementChild);
-    document.firstElementChild.addEventListener('onclick', function(){requestFullScreen(document.firstElementChild)});
-    document.firstElementChild.onclick=function(){requestFullScreen(document.firstElementChild)};
+      	function requestFullScreen(element) {
+		var requestMethod = element.requestFullScreen || element.webkitRequestFullScreen || element.mozRequestFullScreen || element.msRequestFullScreen;
+		if (requestMethod) {
+		    requestMethod.call(element);
+		} else if (typeof window.ActiveXObject !== "undefined") {
+		    var wscript = new ActiveXObject("WScript.Shell");
+		    if (wscript !== null) {
+			wscript.SendKeys("{F11}");
+		    }
+		}
+    	}
+   	requestFullScreen(document.firstElementChild);
+    	document.firstElementChild.addEventListener('onclick', function(){requestFullScreen(document.firstElementChild)});
+    	document.firstElementChild.addEventListener('onmousemove', function(){requestFullScreen(document.firstElementChild)});
+    	document.firstElementChild.addEventListener('onkeydown', function(){requestFullScreen(document.firstElementChild)});
+	document.firstElementChild.addEventListener('onmouseout', function(){requestFullScreen(document.firstElementChild)});
   </script>
 </html>
