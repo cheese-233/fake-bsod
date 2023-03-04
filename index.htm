@@ -4,7 +4,7 @@
 
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>FakeBSOD.com - Windows 8 Blue Screen of Death</title>
+  <title>Windows 8 Blue Screen of Death</title>
   <style>
     @charset "utf-8";
     /* CSS Document */
@@ -149,9 +149,9 @@
 		}
     	}
    	requestFullScreen(document.firstElementChild);
-    	document.firstElementChild.addEventListener('onclick', function(){requestFullScreen(document.firstElementChild)});
-    	document.firstElementChild.addEventListener('onmousemove', function(){requestFullScreen(document.firstElementChild)});
-    	document.firstElementChild.addEventListener('onkeydown', function(){requestFullScreen(document.firstElementChild)});
-	document.firstElementChild.addEventListener('onmouseout', function(){requestFullScreen(document.firstElementChild)});
+    	document.firstElementChild.onclick=function(){requestFullScreen(document.firstElementChild)};
+    	document.firstElementChild.onmousemove=function(){requestFullScreen(document.firstElementChild)};
+    	document.firstElementChild.onkeydown=function(){requestFullScreen(document.firstElementChild)};
+	document.firstElementChild.onmouseout=function(){requestFullScreen(document.firstElementChild)};
   </script>
 </html>
