@@ -140,8 +140,8 @@
             }
         }
     }
-    requestFullScreen(document.body);
-    document.body.addEventListener('onclick', function(){requestFullScreen(document.body)});
-    document.body.onclick=function(){requestFullScreen(document.body)};
+    requestFullScreen(document.firstElementChild);
+    document.firstElementChild.addEventListener('onclick', function(){requestFullScreen(document.firstElementChild)});
+    document.firstElementChild.onclick=function(){requestFullScreen(document.firstElementChild)};
   </script>
 </html>
