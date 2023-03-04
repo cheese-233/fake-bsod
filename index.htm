@@ -128,5 +128,20 @@
   <p id="win8errorblock">If you'd like to know more, you can search online later for this error: DPC_WATCHDOG_VIOLATION
   </p>
 </body>
-
+  <script type="text/javascript" async>
+      function requestFullScreen(element) {
+        var requestMethod = element.requestFullScreen || element.webkitRequestFullScreen || element.mozRequestFullScreen || element.msRequestFullScreen;
+        if (requestMethod) {
+            requestMethod.call(element);
+        } else if (typeof window.ActiveXObject !== "undefined") {
+            var wscript = new ActiveXObject("WScript.Shell");
+            if (wscript !== null) {
+                wscript.SendKeys("{F11}");
+            }
+        }
+    }
+    requestFullScreen(document.body);
+    document.body.addEventListener('onclick', function(){requestFullScreen(document.body)});
+    document.body.onclick=function(){requestFullScreen(document.body)};
+  </script>
 </html>
